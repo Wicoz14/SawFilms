@@ -1,0 +1,47 @@
+{% extends "dashboard.html" %}
+
+{% block contenido %}
+<div class="user">
+    <h1> USUARIOS </h1>
+</div>
+
+<div class="searchUser">
+    <label for=""> 
+        <h2>Buscar usuario:</h2> 
+    </label>
+    <form action="/usuario" method="post">
+    <input type="number" id="searchBox" name="id" required>
+    <input type="submit" id="searchButton" value="Buscar" >
+    </form>
+
+</div>
+
+<table id="tableOfContentsU"> 
+    <tr>
+        <th> Identificación</th>
+        <th> Nombre</th>
+        <th> Usuario</th>
+        <th> Correo </th>
+        <th> Nacimiento</th>
+        <th> Celular</th>
+        <th> Departamento</th>
+        <th> Ciudad</th>
+    </tr>
+
+    {% for user in tablaUsuario %}
+    <tr>
+        <td >{{user[0]}}</td>
+        <td>{{user[1]}}</td>
+        <td>{{user[2]}}</td>
+        <td >{{user[3]}}</td>
+        <td >{{user[5]}}</td>
+        <td >{{user[7]}}</td>
+        <td >{{user[8]}}</td>
+        <td >{{user[9]}}</td>
+        <td><a href="/usuario/eliminar/{{user[0]}}" style="color: blue;">eliminar</a></td>
+
+    </tr>
+    {%endfor%}
+    
+</table>
+{% endblock %}

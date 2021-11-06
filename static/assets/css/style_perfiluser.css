@@ -1,0 +1,47 @@
+.contenedor{
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    width: 900px 1200px;
+}
+
+.lblfor, select{
+    display: flex;
+    display: block;
+    width: 400px;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff6ba;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.boton {
+    text-align: center;
+    border-radius: 70px;
+    border-width: 2px;
+    border-color: rgb(245,196,20);
+    background: rgb(0,0,0);
+    color: rgb(245,196,20);
+    padding: .3rem .8rem;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid;
+    margin-top: 20px;
+    margin-left: 1rem;
+    margin-left: 1rem;
+}
+
+.botones{
+    text-align: center;
+}

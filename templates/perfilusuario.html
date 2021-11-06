@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block link %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/assets/css/style_perfiluser.css">
+  </head>
+<body onload="cdatos()">
+  <form class="row g-3 cuerporegistro" action="" method="post">
+    <h1>Perfil</h1>
+    <div class="col-md-6">
+      <label class="form-label">Nombres*</label>
+      <input type="text" name="nombres" class="form-control inputregistro" id="nombres" value={{datos[0][1]}} readonly="readonly">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Documento de identidad*</label>
+      <select class="form-select inputregistro" name="selector" id="selector">
+        <option selected>{{datos[0][6]}}</option>
+      </select>
+      <input type="number" name="doc" class="form-control inputregistro" id="doc" value={{datos[0][0]}} readonly="readonly">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label" id="fecha">Fecha de nacimiento*</label>
+      <input class="inputregistro fecha" type="date" name="fecha" value={{datos[0][5]}} readonly="readonly">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label" id="celular">Celular*</label>
+      <input type="number" name="celular" class="form-control inputregistro" id="celular" value={{datos[0][7]}} readonly="readonly">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Departamento*</label>
+      <input type="text" name="departamento" class="form-control inputregistro" id="departamento" value={{datos[0][8]}} readonly="readonly">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Ciudad de residencia*</label>
+      <input type="text" name="ciudad" class="form-control inputregistro" id="ciudad" value={{datos[0][9]}} readonly="readonly">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Nombre de Usuario*</label>
+      <input type="name" name="usuario" class="form-control inputregistro" id="usuario" value={{datos[0][2]}} readonly="readonly">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label">Correo*</label>
+      <input type="email" name="email" class="form-control inputregistro" id="email" value={{datos[0][3]}} >
+    </div>
+  </form>
+
+  <div class = botones>
+    <a class="boton" role="button" href="/editarpu" style="text-decoration:none; color:#ffc107">Editar</a>
+    <a class="boton" role="button" href="/infocompras" style="text-decoration:none; color:#ffc107">Compras</a>
+  </div>
+</body>
+</html>
+
+
+
+{% endblock %}

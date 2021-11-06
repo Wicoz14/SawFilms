@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block link %}
+<link rel="stylesheet" href="/static/assets/css/style_presentacion.css">
+{% endblock %}
+{% block contenido %}
+<body>
+    <main>
+        <section>
+            <div class="backg">
+                <div class="txtback">
+                    <h1 class="title">ASEGURA TU SILLA</h1>
+                    <p class="textregist">Regístrate y compra tus entradas directamente desde nuestra pagina web</p>
+                    <p><a class="botonregist" role="button" href="/registro" style="text-decoration:none; color:#ffc107">REGISTRARME</a></p>
+                    <div>
+                        {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                                 {% for message in messages %}
+                                 <p class="textregist">{{ message }}</p>
+                                 {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <h1>PRÓXIMOS ESTRENOS</h1>
+
+        <div class="container-fluid">
+            <div class="row justify-content-around" id="">
+                {% for i in estrenos %}
+                <div class="col text-center peli">
+                    <img id="content_div_one_photo" class="rounded " src="{{i[4]}}">
+                    <h4>{{i[0]}}</h4>
+                    <p>Genero: {{i[1]}}</p>
+                    <p>Director: {{i[2]}}</p>
+                    <p>Estreno: {{i[3]}}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>   
+</body>
+{% endblock %}

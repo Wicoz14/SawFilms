@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block contenido %}
+<h1>Resultados de busqueda para: {{pelicula}}</h1>
+{%if busqueda%}
+{% for i in busqueda %}
+<div class="col-sm divbusqueda"><img class="card-img-top imagenbusqueda" src="{{i[9]}}" />
+    <div class="movie_body">
+        <h5 class="movie_title">{{i[1]}}</h5>
+        <p class="desc">Genero: {{i[4]}}</p>
+        <p class="desc">Duracion: {{i[2]}}</p>
+        <p><a class="btn botonverbus" role="button" href="/detallefunciones/{{i[0]}}">Ver...</a></p>
+    </div>
+</div>
+{% endfor %}
+{%else %}
+<P>No se encontraro resultados de su busqueda</P>
+{% endif %}
+{% endblock %}

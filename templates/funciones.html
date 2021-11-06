@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block link %}
+<link rel="stylesheet" href="/static/assets/css/style_funciones.css">
+{% endblock %}
+{% block contenido %}
+<body>
+    <main>     
+        <h1>Funciones</h1>
+        <section>
+            <div class="container">
+                <div class="row">
+                    {% for i in funciones %}
+                        <div class="col-sm"><img class="card-img-top" src="{{i[4]}}" />
+                            <div class="movie_body">
+                                <h5 class="movie_title">{{i[0]}}</h5>
+                                <p class="desc">Genero: {{i[1]}}</p>
+                                <p class="desc">Duracion: {{i[2]}}</p>
+                                <p><a class="btn botonver" role="button" href="/detallefunciones/{{i[3]}}">Ver...</a></p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>  
+            </div>
+        </section>
+    </main> 
+</body>
+{% endblock %}
